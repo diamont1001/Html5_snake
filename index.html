@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>snake in html5</title>
+	<link rel="stylesheet" type="text/css" href="css/myStyle.css" >
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/myObject.js"></script>
+	<script type="text/javascript">
+		/* game's resource define here */
+		var X = 2;	//the world coordinate : x
+		var Y = 2;	//the world coordinate : y
+		var ROW = 20;
+		var COL = 20;
+		
+		var bgColor = "rgb(0, 128, 128)";
+		var bodyColor = "rgb(0, 255, 255)";	//snake body 's color
+		var foodColor = "rgb(255, 0, 0)";	//food 's color
+		var gameInterval = 100;	//game speed
+		var isGameing = 0;		//game status
+		var initSnakeLength = 6;
+		
+		var Length = window.screen.availWidth > window.screen.availHeight ? window.screen.availHeight : window.screen.availWidth;
+		var backgroundW = Math.floor(Length * 0.6);
+		var backgroundH = Math.floor(Length * 0.6);
+		var bodyW = Math.floor(backgroundW / COL);	//the snake body width
+		var bodyH = Math.floor(backgroundH / ROW);	//the snake body height
+		backgroundW = bodyW * COL;	//防止之前一步"除去小数"时出现的偏差
+		backgroundH = bodyH * ROW;
+		
+		var curSnake;
+	</script>
+</head>
+<body onload="init();">
+	<h1>Snake</h1>
+	<script type="text/javascript">
+		var mycanvas = '<p><canvas id=\"canvasBg\" width=' + (backgroundW+2+X) + ' height=' + (backgroundH+2+Y) + '>your browser doesn\'t support the HTML5 element canvas</canvas></p>';
+		document.write(mycanvas);
+	</script>
+	<p></p><button type="button" onclick="restart();">Start Game!</button></p>
+	<script type="text/javascript">
+		document.write("speed: " + gameInterval);
+	</script>
+</body>
+</html>
