@@ -1,6 +1,6 @@
 //index x, y to slot[20*20] num
 function index2slot(x, y){
-	return (Math.floor((y * COL + x) / bodyW));	//È¡Õû
+	return (Math.floor((y * COL + x) / bodyW));	//å–æ•´
 }
 //get index x from slot[20*20] num
 function getX(num){
@@ -114,7 +114,7 @@ function createSnake(){
 	SNAKE.wipeBody = createBody(0);
 	SNAKE.isWipeBody = 0;
 	
-	SNAKE.hashArray = new Array();	//±êÖ¾¶ÔÓ¦µÄ¿Õ¸ñÊÇ·ñ±»Õ¼ÓÃ 0:Ã»±»Õ¼ÓÃ, 1:ÒÑ±»Õ¼ÓÃ
+	SNAKE.hashArray = new Array();	//æ ‡å¿—å¯¹åº”çš„ç©ºæ ¼æ˜¯å¦è¢«å ç”¨ 0:æ²¡è¢«å ç”¨, 1:å·²è¢«å ç”¨
 	for(i=0; i<COL*ROW; i++){
 		if(i < initSnakeLength){
 			SNAKE.hashArray[i] = 1;
@@ -155,7 +155,7 @@ function createSnake(){
 	}
 	
 	/*
-	 * Ì°³ÔÉßºËĞÄº¯Êı
+	 * è´ªåƒè›‡æ ¸å¿ƒå‡½æ•°
 	 * 0: ok
 	 * 1: game over
 	 */
